@@ -8,7 +8,7 @@
       <div class="modal-body">
         <div class="container-fluid">
     
-            <div class="images-container">
+            <div class="images-container" id="image-picker-select">
         @include('admin.activities.partials.image-picker-select', array('gallery' => $activity->media))
     </div>
 

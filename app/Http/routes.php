@@ -52,6 +52,16 @@ Route::group(array('prefix' => 'admin', 'middleware' => 'auth'), function () {
         'uses'  => 'Admin\ActivitiesController@update'
         ]);
 
+    Route::post('attivita/{id}/rimuovi', [
+        'as'    => 'admin_delete_activities',
+        'uses'  => 'Admin\ActivitiesController@destroy'
+        ]);
+
+    Route::delete('attivita/{id}/delete_image', [
+        'as'    => 'admin_delete_activities',
+        'uses'  => 'Admin\ActivitiesController@destroyImage'
+        ]);
+
 
 
 

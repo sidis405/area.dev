@@ -14,9 +14,15 @@ class FilesController extends Controller
 
     public function index(Request $request, ActivitiesRepo $activities)
     {
+        $activity = $activities->getById($request->input('activity_id'));
         $gallery = $activities->getMediaForId($request->input('activity_id'));
 
-        return view('admin.activities.partials.gallery-partial', compact('gallery'));
+        $data = [
+            'gallery_partial' => view('admin.activities.partials.gallery-partial', compact('gallery'))->render(),
+            'image_picker_select' => view('admin.activities.partials.image-picker-select', compact('activity', 'gallery'))->render()
+        ];
+
+        return $data;
 
     }
 

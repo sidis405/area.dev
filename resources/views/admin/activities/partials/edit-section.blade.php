@@ -5,6 +5,9 @@
     <div class="panel-body">
         
         <form action="/admin/attivita/{{ $activity->id }}" method="POST">
+        <input type="hidden" name="activity_id" value="{{ $activity->id }}">
+        <input type="hidden" id="featured_image_persisted" value="{{ $activity->featured_image_id }}">
+        <input type="hidden" name="featured_image_id" id="featured_image_id" value="{{ $activity->featured_image_id }}">
             {{csrf_field()}}
             <div class="row">
                 <div class="col-lg-6">
@@ -24,18 +27,23 @@
                         <label>Stato</label>
                         <select name="status_id">
                             @foreach($statuses as $status)
-                            <option value="{{$status['id']}}">{{$status['title']}}</option>
+                            <option value="{{$status['id']}}" @if($status->id == $activity->status_id) selected @endif>{{$status['title']}}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="form-group">
                         <label>In Slide</label>
 
-                        <input type="checkbox"  class="form-control" name="featured"  id="featured" @if($activity->featured) checked @endif>
+                        <input type="checkbox"  class="form-control" name="featured"  id="featured" @if($activity->featured == 'ON') checked @endif>
                     </div>
 
                     <div class="form-group">
-                        <div id="selected_image_preview"></div>
+                        <div id="selected_image_preview">
+                            @if($activity->featured_image_id > 0)
+                             <img src="/image/{{$activity->featuredImage->id}}/{{$activity->featuredImage->file_name}}?w=50&h=50&fit=crop">   
+                            
+                            @endif
+                        </div>
                     </div>
                     
                 </div>

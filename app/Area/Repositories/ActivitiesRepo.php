@@ -4,6 +4,7 @@ namespace Area\Repositories;
 
 use Area\Models\Activities;
 use Area\Models\ActivitiesStatus;
+use Area\Models\FeaturedImage;
 
 /**
 * Activities Repo
@@ -16,6 +17,24 @@ class ActivitiesRepo
 
         return $activity;
     }
+
+    public function remove($id)
+    {   
+        // \Log::info($id);
+        $activity = Activities::find($id);
+        $activity->delete();
+
+        return true;
+    }
+
+    public function removeImage($id)
+    {
+        $image = FeaturedImage::find($id);
+        $image->delete();
+
+        return true;
+    }
+
 
     public function statuses()
     {
@@ -38,7 +57,7 @@ class ActivitiesRepo
 
     public function getById($id)
     {
-        return Activities::with('media', 'status')->whereId($id)->first();
+        return Activities::with('media', 'status', 'featuredImage')->whereId($id)->first();
     }
 
     public function getMediaForId($id)

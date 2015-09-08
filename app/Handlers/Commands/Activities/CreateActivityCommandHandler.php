@@ -35,8 +35,11 @@ class CreateActivityCommandHandler
             $command->title,
             str_slug($command->title, '-'),
             $command->subtitle,
-            $command->description
+            $command->description,
+            strtoupper($command->featured)
         );
+
+        
 
         $activity = $this->repo->save($activity_object);
 

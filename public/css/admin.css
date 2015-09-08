@@ -1,3 +1,17 @@
 .gallery-item {
     margin:10px;
 }
+
+.gallery-item-container i {
+    display: none;
+    top: 13px;
+    right: 7px;
+    position: absolute;
+    font-size: 20px;
+    color: red;
+}
+
+.gallery-item-container:hover i{
+    display: block;
+    z-index: 99;
+}

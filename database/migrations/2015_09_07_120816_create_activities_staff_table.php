@@ -18,6 +18,7 @@ class CreateActivitiesStaffTable extends Migration
             $table->string('slug');
             $table->string('intro');
             $table->text('description');
+            $table->integer('order')->default(0);
             $table->integer('active')->default(0);
             $table->timestamps();
         });

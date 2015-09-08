@@ -18,23 +18,35 @@ class Activities extends Model implements HasMedia
         return $this->belongsTo('Area\Models\ActivitiesStatus', 'status_id');
     }
 
-    public static function make($title, $slug, $subtitle, $description)
+    public function featuredImage()
     {
-        $activity = new static(compact('title', 'slug', 'subtitle', 'description'));
+        return $this->belongsTo('Area\Models\FeaturedImage', 'featured_image_id');
+    }
+
+    public static function make($title, $slug, $subtitle, $description, $featured)
+    {
+        $activity = new static(compact('title', 'slug', 'subtitle', 'description', 'featured'));
 
         return $activity;
     }
 
-    public static function edit($title, $slug, $subtitle, $description)
+    public static function edit($activity_id, $title, $slug, $subtitle, $description, $featured, $status_id, $featured_image_id)
     {
-        $activity = static::find($id);
+ 
+        if ($featured == 'OFF') {
+            $featured_image_id = null;
+        }
 
-        $activity->title         = $title;
-        $activity->slug          = $slug;
-        $activity->subtitle      = $subtitle;
-        $activity->description   = $description;
+        $activity = static::find($activity_id);
+
+        $activity->title                = $title;
+        $activity->slug                 = $slug;
+        $activity->subtitle             = $subtitle;
+        $activity->description          = $description;
+        $activity->status_id            = $status_id;
+        $activity->featured_image_id    = $featured_image_id;
+        $activity->featured             = $featured;
 
         return $activity;
-
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Http\Requests\Activities\CreateActivityRequest;
+use App\Http\Requests\Activities\UpdateActivityRequest;
 use Area\Repositories\ActivitiesRepo;
 use Illuminate\Http\Request;
 
@@ -29,7 +30,6 @@ class ActivitiesController extends Controller
      */
     public function create(ActivitiesRepo $repo)
     {
-        return 
         $statuses = $repo->statuses();
 
         return view('admin.activities.create', compact('statuses'));
@@ -62,6 +62,7 @@ class ActivitiesController extends Controller
         $activity = $repo->getById($id);
         $statuses = $repo->statuses();
 
+        // return $activity;
 
         return view('admin.activities.edit', compact('activity', 'statuses'));
     }
@@ -73,9 +74,16 @@ class ActivitiesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateActivityRequest $request)
     {
-        //
+
+        // return $request->input();
+        
+        $activity = $this->dispatchFrom('App\Commands\Activities\UpdateActivityCommand', $request);
+
+        flash()->success('Attività modificata con successo.');
+
+        return redirect()->to('/admin/attivita/' . $activity->id . '/modifica');
     }
 
     /**
@@ -84,8 +92,27 @@ class ActivitiesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function destroy($id)
+    public function destroy($id, ActivitiesRepo $repo)
     {
-        //
+        $delete = $repo->remove($id);
+
+        flash()->success('Attività cancellata con successo.');
+
+        return redirect()->to('/admin/attivita/');
+    }
+
+    /**
+     * Remove the specified activity from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function destroyImage(Request $request, ActivitiesRepo $repo)
+    {
+        $image_id = $request->input('image_id');
+
+        $delete = $repo->removeImage($image_id);
+
+        return json_encode('true');
     }
 }
