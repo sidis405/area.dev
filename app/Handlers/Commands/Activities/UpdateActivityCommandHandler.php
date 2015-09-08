@@ -31,7 +31,6 @@ class UpdateActivityCommandHandler
      */
     public function handle(UpdateActivityCommand $command)
     {
-        // dd(strtoupper($command->featured));
 
         $activity_object = Activities::edit(
             $command->activity_id,
@@ -44,7 +43,6 @@ class UpdateActivityCommandHandler
             $command->featured_image_id
         );
 
-        // dd($activity_object);
 
         $activity = $this->repo->save($activity_object);
 

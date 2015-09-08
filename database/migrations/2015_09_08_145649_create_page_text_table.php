@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateActivitiesStaffTable extends Migration
+class CreatePageTextTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,11 @@ class CreateActivitiesStaffTable extends Migration
      */
     public function up()
     {
-        Schema::create('staff', function (Blueprint $table) {
+        Schema::create('page_text', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('slug');
-            $table->string('intro');
-            $table->text('description');
-            $table->integer('order')->default(0);
-            $table->integer('featured_image_id')->nullable();
-            $table->integer('active')->default(0);
+            $table->string('title');
+            $table->text('value');
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ class CreateActivitiesStaffTable extends Migration
      */
     public function down()
     {
-        Schema::drop('staff');
+        Schema::drop('page_text');
     }
 }

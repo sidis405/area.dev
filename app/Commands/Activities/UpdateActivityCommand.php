@@ -16,7 +16,6 @@ class UpdateActivityCommand extends Command
 
     public function __construct($activity_id, $title, $subtitle, $description, $status_id, $featured_image_id, $featured = 'OFF')
     {
-
         $this->title = $title;
         $this->subtitle = $subtitle;
         $this->description = $description;

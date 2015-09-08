@@ -13,7 +13,7 @@ class UpdateStaffRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,18 @@ class UpdateStaffRequest extends Request
     public function rules()
     {
         return [
-            //
+            'name' => 'required',
+            'intro' => 'required',
+            'description' => 'required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Il campo nome è obbligatorio',
+            'intro.required' => 'Il campo intro è obbligatorio',
+            'description.required' => 'Il campo descrizione è obbligatorio',
         ];
     }
 }

@@ -13,7 +13,7 @@
     </div>
     <div class="panel-body">
         
-        <form action="/admin/attivita" method="POST">
+       <form action="/admin/attivita" method="POST">
             {{csrf_field()}}
         <div class="row">
             <div class="col-lg-12">

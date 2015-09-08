@@ -8,12 +8,11 @@
 
 
 
-
 @section('content')
 
-@include('admin.layouts.title-and-toggle', array('title' => 'Inserisci Profilo Staff'))
+@include('admin.layouts.title-and-toggle', array('title' => 'Modifica Profilo Staff'))
 
-<p>In questa sezione puoi creare un nuovo 'Profilo Staff'</p>
+<p>In questa sezione puoi creare una nuova 'Profilo Staff'</p>
 @include('admin.layouts.errors')
 @include('flash::message')
 
@@ -23,17 +22,18 @@
     </div>
     <div class="panel-body">
         
-        <form action="/admin/staff" method="POST">
+        <form action="/admin/staff/{{$staff->id}}" method="POST">
             {{csrf_field()}}
+            <input type="hidden" name="staff_id" value="{{$staff->id}}">
         <div class="row">
             <div class="col-lg-12">
                 <div class="form-group">
                     <label>Nome Completo</label>
-                    <input class="form-control" name="name" placeholder="Nome Completo" value="{{old('name')}}" >
+                    <input class="form-control" name="name" placeholder="Titolo attività" value="{{old('name', $staff->name)}}">
                 </div>
                 <div class="form-group">
                     <label>Intro</label>
-                    <input class="form-control" name="intro"  value="{{old('name')}}"  placeholder="Intro..." >
+                    <input class="form-control" name="intro" placeholder="Sottotitolo attività" value="{{old('intro', $staff->intro)}}">
                 </div>
                 
             </div>
@@ -43,7 +43,7 @@
             <div class="col-lg-12">
                 <div class="form-group">
                     <label>Descrizione</label>
-                    <textarea class="form-control" name="description" id="staff_description" rows="5" placeholder="Bio membro" required>{{old('description')}}</textarea>
+                    <textarea class="form-control" name="description" id="staff_description" rows="5" placeholder="Descrivi attività" required>{{old('description', $staff->description)}}</textarea>
                 </div>
             </div>
         </div>

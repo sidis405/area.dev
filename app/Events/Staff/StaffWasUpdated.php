@@ -3,8 +3,9 @@
 namespace App\Events\Staff;
 
 use App\Events\Event;
-use Illuminate\Queue\SerializesModels;
+use Area\Models\Staff;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use Illuminate\Queue\SerializesModels;
 
 class StaffWasUpdated extends Event
 {
@@ -15,9 +16,9 @@ class StaffWasUpdated extends Event
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Staff $staff)
     {
-        //
+        $this->staff = $staff;
     }
 
     /**

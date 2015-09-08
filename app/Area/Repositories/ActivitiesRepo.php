@@ -20,7 +20,6 @@ class ActivitiesRepo
 
     public function remove($id)
     {   
-        // \Log::info($id);
         $activity = Activities::find($id);
         $activity->delete();
 
@@ -44,9 +43,9 @@ class ActivitiesRepo
     public function getAll($howMany = null)
     {
         if ($howMany) {
-            return Activities::with('media', 'status')->latest()->simplePaginate($howMany);
+            return Activities::with('media', 'status', 'featuredImage')->latest()->simplePaginate($howMany);
         } else {
-            return Activities::with('media', 'status')->latest()->get();
+            return Activities::with('media', 'status', 'featuredImage')->latest()->get();
         }
     }
 
@@ -63,8 +62,6 @@ class ActivitiesRepo
     public function getMediaForId($id)
     {
         $activity = $this->getById($id);
-
-        // return $activity;
         
         return $activity->getMedia();
     }

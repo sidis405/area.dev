@@ -9,6 +9,16 @@ use Area\Models\PageText;
 */
 class TextRepo
 {
+
+    public function updateText($id, $data)
+    {
+        $text = PageText::find($id);
+        $text->update(['value' => $data->input('value')]);
+        $text->save();
+
+        return $text;
+    }
+
     public function save(PageText $text)
     {
         $text->save();
@@ -18,7 +28,7 @@ class TextRepo
 
     public function getAll($howMany = null)
     {
-        return PageText::orderBy('created_at', 'ASC');
+        return PageText::orderBy('created_at', 'ASC')->get();
     }
 
     public function getBySlug($slug)
