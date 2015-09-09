@@ -20,6 +20,8 @@
 
     <link rel="stylesheet" href="/styles/style.css">
 
+    <link rel="stylesheet" type="text/css" href="/css/magnific-popup.css">
+
     <script src="/scripts/modernizr.js"></script>
 
 
@@ -121,7 +123,7 @@
 
 
             @foreach ($activities as $activity)
-
+        
             <div class="col-xs-12 attivita">
                 <div class="media">
                     <div class="row">
@@ -143,10 +145,11 @@
 
                             <span class="status">{{ $activity->status->title }}</span>
 
-                            <div class="camera">
-                                <i class="fa fa-camera"></i>
+                             <div class="camera gallery-button" data-id="{{$activity->id}}">
+                               <i class="fa fa-camera"></i>
                                 <span class="counter">({{ count($activity->media) }})</span>
-                            </div>                            
+                            </div>        
+                                    
                           </div>
                       </div>
                   </div>
@@ -191,8 +194,14 @@
   
   
     <script src="/scripts/vendor.js"></script>
+    <script type="text/javascript" src="/js/jquery.magnific-popup.min.js"></script>
 
     <script src="/scripts/main.js"></script>
+    <script src="/js/main.js"></script>
+
+    @foreach ($activities as $activity)
+    @include('home.partials.gallery-partial', array('gallery'=>$activity->media, 'id' => $activity->id)) 
+    @endforeach
     
   </body>
 </html>

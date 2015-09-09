@@ -280,6 +280,9 @@ section#attivita .attivita .status {
   margin: 30px auto;
   display: block;
 }
+.camera {
+cursor: pointer;
+}
 section#attivita .attivita .camera i {
   font-size: 26px;
   color: #8db335;
