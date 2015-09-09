@@ -5,7 +5,7 @@
 
 <script type="text/javascript">
     
-$('.gallery-item-' + {{$id}}).magnificPopup({
+$(document).find('.gallery-item-' + {{$id}}).magnificPopup({
       type: 'image',
       gallery:{
         enabled:true

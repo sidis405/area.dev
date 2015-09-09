@@ -121,43 +121,15 @@
                 <h2>Attività</h2>
             </div>
 
+            <div id="load-more-activities-url" style="display:none">{{formatLoadMoreUrl($activities->nextPageUrl())}}</div>
 
-            @foreach ($activities as $activity)
-        
-            <div class="col-xs-12 attivita" id="{{$activity->slug}}">
-                <div class="media">
-                    <div class="row">
-                       <div class="col-md-4 col-sm-4">                     
-                          <div class="media-left media-middle">
+            <div class="activities-container">
+            @include('home.partials.activities')
+            </div>
 
-                              <img class="media-object img-responsive" src="{{$activity->present()->featuredImageUrl()}}" alt="">
-
-                          </div>
-                       </div>
-                       <div class="col-md-8 col-sm-8">
-                          <div class="media-body">                    
-                            <h4 class="media-heading activity-title">{{ $activity->title }}</h4>
-                            <span class="media-heading activity-subtitle">{{ $activity->subtitle }}</span>
-
-                            <p class="activity-description">
-                                {{ $activity->description }}
-                            </p>
-
-                            <span class="status">{{ $activity->status->title }}</span>
-
-                             <div class="camera gallery-button" data-id="{{$activity->id}}">
-                               <i class="fa fa-camera"></i>
-                                <span class="counter">({{ count($activity->media) }})</span>
-                            </div>        
-                                    
-                          </div>
-                      </div>
-                  </div>
-                </div> 
-            </div> <!-- end of attivita -->           
-
-
-            @endforeach
+            @if($activities->hasMorePages())
+                <span class="load-more-activities">Visualizza di più</span>
+            @endif
 
             
         </div>
@@ -199,9 +171,11 @@
     <script src="/scripts/main.js"></script>
     <script src="/js/main.js"></script>
 
-    @foreach ($activities as $activity)
-    @include('home.partials.gallery-partial', array('gallery'=>$activity->media, 'id' => $activity->id)) 
-    @endforeach
+    <div class="hidden-galleries">
+
+    @include('home.partials.gallery-partial-main') 
+
+    </div>
     
   </body>
 </html>

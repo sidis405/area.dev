@@ -37,7 +37,7 @@
         
         <div class="row">
             
-            <div class="col-lg-8 col-lg-offset-4">
+            <div class="col-lg-7 col-lg-offset-5">
                 
                 <button type="submit" class="btn btn-success">Salva</button>
                 <button type="reset" class="btn btn-warning">Abbandona</button>

@@ -23,7 +23,7 @@ class HomeController extends Controller
 
         // return $featured;
 
-        $activities = $activities_repo->getAll();
+        $activities = $activities_repo->getAll(5);
 
         // return $activities;
         
@@ -36,5 +36,18 @@ class HomeController extends Controller
         // return $texts;
 
         return view('home.index', compact('featured', 'activities', 'staff', 'texts'));
+    }
+
+    public function loadMoreActivities(ActivitiesRepo $activities_repo)
+    {
+        $activities = $activities_repo->getAll(5);
+
+
+
+        return [
+            'layout' => view('home.partials.activities', compact('activities'))->render(), 
+            'url' => str_replace('/?', '?', $activities->nextPageUrl()),
+            'more' => $activities->hasMorePages(), 
+            'galleries' => view('home.partials.gallery-partial-main', compact('activities'))->render()];
     }
 }

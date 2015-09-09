@@ -41,6 +41,9 @@ body {
 	color: #000;
 	font-weight: 100;
 }
+.sidebar-nav i {
+	font-size: 15px;
+}
 .form-control {
 	box-shadow: none;
 }
@@ -77,4 +80,8 @@ h1.logo {
 }
 .admin-container {
 	margin-top: 5%;
+}
+
+.admin-page-title {
+	font-weight: 100;
 }

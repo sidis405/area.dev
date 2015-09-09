@@ -23,7 +23,7 @@
                     <tr>
                         
                         <td style="width:25%"><a href="/admin/testi/{{$item['id']}}/modifica">{{$item['title']}}</a></td>
-                        <td>{!!$item['value']!!}</td>
+                        <td class="text-fz">{!!$item['value']!!}</td>
                     </tr>
                     @endforeach
                 </tbody>

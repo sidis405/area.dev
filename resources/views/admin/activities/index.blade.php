@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 @section('content')
 
-@include('admin.layouts.title-and-toggle', array('title' => 'Lista Attivita'))
+@include('admin.layouts.title-and-toggle', array('title' => 'Lista Attività'))
 
 <p>In questa sezione si possono vedere le 'Attività' presenti sul sito ed inserirne nuove</p>
 @include('admin.layouts.errors')

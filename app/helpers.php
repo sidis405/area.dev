@@ -21,3 +21,8 @@ function carouselIndicators($featured)
 
     return $out;
 }
+
+function formatLoadMoreUrl($input)
+{
+    return str_replace('/?', '/loadMoreActivities?', $input);
+}
