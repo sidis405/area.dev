@@ -13,6 +13,8 @@ class Activities extends Model implements HasMedia
 
     use PresentableTrait, HasMediaTrait;
 
+    protected $presenter = 'Area\Presenters\ActivityPresenter';
+
     public function status()
     {
         return $this->belongsTo('Area\Models\ActivitiesStatus', 'status_id');

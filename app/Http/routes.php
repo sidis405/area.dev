@@ -13,9 +13,8 @@ Route::get('image/{path}', function (League\Glide\Server $server, Illuminate\Htt
 
 })->where('path', '.*');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', 'HomeController@index');
 
 Route::group(array('prefix' => 'admin', 'middleware' => 'auth'), function () {
 

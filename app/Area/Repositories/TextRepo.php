@@ -28,7 +28,22 @@ class TextRepo
 
     public function getAll($howMany = null)
     {
-        return PageText::orderBy('created_at', 'ASC')->get();
+        $texts = PageText::orderBy('created_at', 'ASC')->get();
+
+        return $this->makeAssocArray($texts, 'name');
+
+    }
+
+    public function makeAssocArray($obj, $key)
+    {
+        $out = [];
+
+        foreach ($obj as $item) {
+            $out[$item[$key]] = $item;
+        }
+
+        return $out;
+
     }
 
     public function getBySlug($slug)

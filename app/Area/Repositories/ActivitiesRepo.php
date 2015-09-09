@@ -19,7 +19,7 @@ class ActivitiesRepo
     }
 
     public function remove($id)
-    {   
+    {
         $activity = Activities::find($id);
         $activity->delete();
 
@@ -38,6 +38,11 @@ class ActivitiesRepo
     public function statuses()
     {
         return ActivitiesStatus::all();
+    }
+
+    public function getFeatured()
+    {
+        return Activities::with('featuredImage')->whereFeatured('ON')->where('featured_image_id', '>', '0')->latest()->get();
     }
 
     public function getAll($howMany = null)
