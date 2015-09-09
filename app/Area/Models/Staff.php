@@ -4,6 +4,7 @@ namespace Area\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Laracasts\Presenter\PresentableTrait;
+use Rutorika\Sortable\SortableTrait;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMedia;
 
@@ -11,7 +12,7 @@ class Staff extends Model implements HasMedia
 {
     protected $fillable = ['name', 'slug', 'intro', 'description', 'order'];
 
-    use PresentableTrait, HasMediaTrait;
+    use PresentableTrait, HasMediaTrait, SortableTrait;
 
     public function featuredImage()
     {
@@ -19,7 +20,7 @@ class Staff extends Model implements HasMedia
     }
 
     public static function make($name, $slug, $intro, $description)
-    {   
+    {
         $staff = new static(compact('name', 'slug', 'intro', 'description'));
 
         return $staff;
@@ -27,7 +28,6 @@ class Staff extends Model implements HasMedia
 
     public static function edit($staff_id, $name, $slug, $intro, $description, $featured_image_id)
     {
- 
         $staff = static::find($staff_id);
 
         $staff->name                = $name;

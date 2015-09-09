@@ -36,9 +36,9 @@ class StaffRepo
     public function getAll($howMany = null)
     {
         if ($howMany) {
-            return Staff::with('media', 'featuredImage')->latest()->simplePaginate($howMany);
+            return Staff::with('media', 'featuredImage')->orderBy('position', 'ASC')->simplePaginate($howMany);
         } else {
-            return Staff::with('media', 'featuredImage')->latest()->get();
+            return Staff::with('media', 'featuredImage')->orderBy('position', 'ASC')->get();
         }
     }
 

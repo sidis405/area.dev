@@ -70,6 +70,8 @@ Route::group(array('prefix' => 'admin', 'middleware' => 'auth'), function () {
 
     #   STAFF ROUTES
 
+    Route::post('staff/ordina', '\Rutorika\Sortable\SortableController@sort');
+
     Route::get('staff', [
         'as'    => 'admin_staff',
         'uses'  => 'Admin\StaffController@index'

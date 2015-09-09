@@ -19,7 +19,7 @@ class CreateActivitiesTable extends Migration
             $table->string('subtitle');
             $table->text('description');
             $table->integer('status_id')->default(2);
-            $table->integer('order')->default(0);
+            $table->integer('position')->default(0);
             $table->integer('featured')->default(0);
             $table->integer('featured_image_id')->nullable();
             $table->integer('active')->default(0);
