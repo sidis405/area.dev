@@ -59,6 +59,11 @@
         </form>
     </div>
 </div>
+</div>
+
+@include('admin.staff.partials.delete-partial')
+
+
 @stop
 
 @section('footer_scripts')

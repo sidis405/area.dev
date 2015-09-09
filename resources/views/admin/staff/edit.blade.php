@@ -18,6 +18,8 @@
 @include('flash::message')
 
     @include('admin.staff.partials.edit-section-simple')
+
+    
     
 @stop
 

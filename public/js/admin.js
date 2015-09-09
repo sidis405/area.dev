@@ -119,3 +119,9 @@ $('#press_deletion_form').submit(function() {
     var c = confirm("Sei sicuro di volere cancellare permanenetemente questa attività?");
     return c; 
 });
+
+$('#staff_deletion_form').submit(function() {
+    var c = confirm("Sei sicuro di volere cancellare permanenetemente questo membro team?");
+    return c; 
+});
+

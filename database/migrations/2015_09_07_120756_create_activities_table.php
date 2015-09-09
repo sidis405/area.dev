@@ -20,7 +20,7 @@ class CreateActivitiesTable extends Migration
             $table->text('description');
             $table->integer('status_id')->default(2);
             $table->integer('position')->default(0);
-            $table->integer('featured')->default(0);
+            $table->enum('featured', array('OFF', 'ON'))->default('OFF');
             $table->integer('featured_image_id')->nullable();
             $table->integer('active')->default(0);
             $table->timestamps();

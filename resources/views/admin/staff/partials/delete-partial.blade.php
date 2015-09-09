@@ -7,7 +7,7 @@
             <div class="panel-body">
                 <div class="col-lg-4 col-lg-offset-5">
                     
-                    <form method="POST" action="/admin/attivita/{{ $activity->id }}/rimuovi" id="press_deletion_form">
+                    <form method="POST" action="/admin/staff/{{ $staff->id }}/rimuovi" id="staff_deletion_form">
                         {{ csrf_field() }}
                  
 
