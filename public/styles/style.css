@@ -179,6 +179,7 @@ section#opening #slideshow .carousel-caption h3 {
 section#opening #slideshow .item{
   width: 100%;
   height: 530px;
+  cursor: pointer;
 }
 
 section#opening #slideshow .carousel-control {

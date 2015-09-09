@@ -22,12 +22,14 @@ Route::group(array('prefix' => 'admin', 'middleware' => 'auth'), function () {
     Route::post('attivita/get_images', 'Admin\FilesController@index');
 
 
+    Route::get('/', function(){
+        return redirect()->to('admin/attivita');
+    });
 
-
-    Route::get('/', [
-        'as'    => 'admin_home',
-        'uses'  => 'Admin\HomeController@index'
-        ]);
+    // Route::get('/', [
+    //     'as'    => 'admin_home',
+    //     'uses'  => 'Admin\HomeController@index'
+    //     ]);
 
     #   ACTIVITIES ROUTES
 

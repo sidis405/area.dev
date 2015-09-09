@@ -11,7 +11,7 @@
 
 @section('content')
 
-@include('admin.layouts.title-and-toggle', array('title' => 'Inserisci Attività'))
+@include('admin.layouts.title-and-toggle', array('title' => 'Modifica Testo'))
 
 <p>In questa sezione puoi modificare testi sito</p>
 @include('admin.layouts.errors')

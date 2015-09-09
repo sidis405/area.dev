@@ -10,7 +10,7 @@
         <input type="hidden" name="featured_image_id" id="featured_image_id" value="{{ $activity->featured_image_id }}">
             {{csrf_field()}}
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-9">
                     <div class="form-group">
                         <label>Titolo</label>
                         <input class="form-control" name="title" value="{{ old('title', $activity->title) }}" placeholder="Titolo attività" >
@@ -21,7 +21,7 @@
                     </div>
                     
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-3">
 
                     <div class="form-group">
                         <label>Stato</label>
@@ -61,7 +61,7 @@
             
             <div class="row">
                 
-                <div class="col-lg-8 col-lg-offset-4">
+                <div class="col-lg-7 col-lg-offset-5">
                     
                     <button type="submit" class="btn btn-success">Salva</button>
                     <button type="reset" class="btn btn-warning">Abbandona</button>

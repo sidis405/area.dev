@@ -124,14 +124,14 @@
 
             @foreach ($activities as $activity)
         
-            <div class="col-xs-12 attivita">
+            <div class="col-xs-12 attivita" id="{{$activity->slug}}">
                 <div class="media">
                     <div class="row">
                        <div class="col-md-4 col-sm-4">                     
                           <div class="media-left media-middle">
-                            <a href="#">
+
                               <img class="media-object img-responsive" src="{{$activity->present()->featuredImageUrl()}}" alt="">
-                            </a>
+
                           </div>
                        </div>
                        <div class="col-md-8 col-sm-8">

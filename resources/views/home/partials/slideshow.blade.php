@@ -11,9 +11,10 @@
 
                 
 
-                <div class="item <?php if ($first) {
+                <div data-url="#{{$item->slug}}" class="item <?php if ($first) {
     echo 'active';
-} $first=false; ?>" style="background: url({{$item->present()->slideImageUrl()}}) no-repeat center center;">                             
+} $first=false; ?>" style="background: url({{$item->present()->slideImageUrl()}}) no-repeat center center;">
+
                     <div class="container">
                         <div class="carousel-caption">
                             <h2 class="caption-title">{{$item->title}}</h2>
