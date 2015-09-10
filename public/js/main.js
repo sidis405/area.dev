@@ -31,7 +31,7 @@ $(document).on('click', '.activity-expander', function(){
 
 	var full_text_obj = $(this).parent().find('.full-text');	
     var full_text = $(full_text_obj).text(); 
-	var full_text_height = $(full_text_obj).height();	
+	var full_text_height = $(full_text_obj).height()+60;	
 
 	var truncated_text_obj = $(this).parent().find('.truncated-text');	
 	var truncated_text = $(truncated_text_obj).text();   
