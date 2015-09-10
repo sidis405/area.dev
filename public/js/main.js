@@ -11,11 +11,15 @@ $('.item').click(function() {
 	var url = $(this).data('url');
 	var navbar_height = parseInt($('.navbar').css('height').replace('px', ''));
 
-	$('html, body').stop().animate({
-		scrollTop: $(url).offset().top - navbar_height - 25
-	}, 600);
+    animate_scroll(url, navbar_height, 25);
 
 });
+
+function animate_scroll (element, variable, offset) {
+    $('html, body').stop().animate({
+        scrollTop: $(element).offset().top - variable - offset
+    }, 600);
+}
 
 $(document).on('click', '.activity-expander', function(){
 
@@ -26,23 +30,31 @@ $(document).on('click', '.activity-expander', function(){
 	var paragraph = $(this).parent().find('p');	
 
 	var full_text_obj = $(this).parent().find('.full-text');	
-
-	var full_text = $(this).parent().find('.full-text').text();	
+    var full_text = $(full_text_obj).text(); 
+	var full_text_height = $(full_text_obj).height();	
 
 	var truncated_text_obj = $(this).parent().find('.truncated-text');	
-	
-	var truncated_text = $(this).parent().find('.truncated-text').text();	
+	var truncated_text = $(truncated_text_obj).text();   
+	var truncated_text_height = $(truncated_text_obj).height();	
 
 	if($(paragraph).hasClass('truncated'))
 	{
-		$(paragraph).html(full_text);
-		// $(paragraph).slideDown();
+		$(paragraph).animate({'height': full_text_height}, function(){
+            $(paragraph).html(full_text);
+        });
+        $(paragraph).css('margin-bottom', '60px');
+
 		$(paragraph).removeClass('truncated');
 		$(this).text('Chiudi');
 
 	}else {
-		$(paragraph).html(truncated_text);
-		// $(paragraph).slideUp();
+
+        $(paragraph).animate({'height': truncated_text_height}, function(){
+            $(paragraph).html(truncated_text);
+        });
+
+        $(paragraph).css('margin-bottom', '30px');
+
 		$(paragraph).addClass('truncated');
 		$(this).text('Leggi di più');
 	}
@@ -58,6 +70,9 @@ $(document).on('click', '.load-more-activities', function(){
 
 function getActivities (url) {
 
+    var last_activity = $('.attivita').last();
+    var navbar_height = parseInt($('.navbar').css('height').replace('px', ''));
+
     $.ajax({
         url: url,
         type: 'GET',
@@ -67,6 +82,9 @@ function getActivities (url) {
             $('.hidden-galleries').append(data.galleries);
             $(document).find('#load-more-activities-url').text(data.url);
 
+            var next_activity = $(last_activity).next();
+
+            animate_scroll(next_activity, navbar_height, 25);
 
             if(data.more == false)
             {
