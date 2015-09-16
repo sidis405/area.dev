@@ -15,8 +15,9 @@ class CreateActivitiesStaffTable extends Migration
         Schema::create('staff', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('email');
             $table->string('slug');
-            $table->string('intro');
+            $table->text('intro');
             $table->text('description');
             $table->integer('position')->default(0);
             $table->integer('featured_image_id')->nullable();

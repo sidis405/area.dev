@@ -37,7 +37,8 @@ class UpdateStaffCommandHandler
             str_slug($command->name, '-'),
             $command->intro,
             $command->description,
-            $command->featured_image_id
+            $command->featured_image_id,
+            $command->email
         );
 
         $staff = $this->repo->save($staff_object);

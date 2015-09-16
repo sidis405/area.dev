@@ -6,12 +6,18 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use Area\Repositories\ActivitiesRepo;
 use Area\Repositories\StaffRepo;
-use Area\Repositories\TextRepo;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(ActivitiesRepo $activities_repo, StaffRepo $staff_repo, TextRepo $text_repo)
+    /**
+     * sdasd
+     * @param  ActivitiesRepo $activities_repo wew
+     * @param  StaffRepo      $staff_repo      weq
+     * @param  TextRepo       $text_repo       sdadas
+     * @return qwe                          weqw
+     */
+    public function index(ActivitiesRepo $activities_repo, StaffRepo $staff_repo)
     {
         $featured = $activities_repo->getFeatured();
 
@@ -19,9 +25,7 @@ class HomeController extends Controller
 
         $staff = $staff_repo->getAll();
 
-        $texts = $text_repo->getAll();
-
-        return view('home.index', compact('featured', 'activities', 'staff', 'texts'));
+        return view('home.index', compact('featured', 'activities', 'staff'));
     }
 
     public function loadMoreActivities(ActivitiesRepo $activities_repo)
@@ -29,7 +33,7 @@ class HomeController extends Controller
         $activities = $activities_repo->getAll(5);
 
         return [
-            'layout' => view('home.partials.activities', compact('activities'))->render(), 
+            'layout' => view('home.partials.activities-partial', compact('activities'))->render(), 
             'url' => str_replace('/?', '?', $activities->nextPageUrl()),
             'more' => $activities->hasMorePages(), 
             'galleries' => view('home.partials.gallery-partial-main', compact('activities'))->render()];

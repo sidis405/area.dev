@@ -73,6 +73,8 @@ function getActivities (url) {
     var last_activity = $('.attivita').last();
     var navbar_height = parseInt($('.navbar').css('height').replace('px', ''));
 
+    console.log(last_activity);
+
     $.ajax({
         url: url,
         type: 'GET',

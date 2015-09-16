@@ -22,6 +22,18 @@ function carouselIndicators($featured)
     return $out;
 }
 
+function makeImageUrl($path, $w = null, $h = null)
+{
+    $path = str_replace('images/', '/img/', $path);
+
+    if($w && $h)
+    {
+        $path .= '?' . http_build_query(['w' => $w, 'h' => $h]);
+    }
+
+    return $path;
+}
+
 function formatLoadMoreUrl($input)
 {
     return str_replace('/?', '/loadMoreActivities?', $input);

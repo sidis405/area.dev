@@ -29,11 +29,15 @@
             <div class="col-lg-12">
                 <div class="form-group">
                     <label>Nome Completo</label>
-                    <input class="form-control" name="name" placeholder="Titolo attività" value="{{old('name', $staff->name)}}">
+                    <input class="form-control" name="name" placeholder="Nome Completo" value="{{old('name', $staff->name)}}">
+                </div>
+                <div class="form-group">
+                    <label>Indirizzo Mail</label>
+                    <input class="form-control" name="email" placeholder="Indirizzo Mail" value="{{old('email', $staff->email)}}" >
                 </div>
                 <div class="form-group">
                     <label>Intro</label>
-                    <input class="form-control" name="intro" placeholder="Sottotitolo attività" value="{{old('intro', $staff->intro)}}">
+                    <textarea class="form-control" name="intro" rows="5" placeholder="Intro" required>{{old('intro', $staff->intro)}}</textarea>
                 </div>
                 
             </div>

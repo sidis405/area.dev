@@ -35,7 +35,8 @@ class CreateStaffCommandHandler
             $command->name,
             str_slug($command->name, '-'),
             $command->intro,
-            $command->description
+            $command->description,
+            $command->email
         );
 
 

@@ -32,8 +32,12 @@
                     <input class="form-control" name="name" placeholder="Nome Completo" value="{{old('name')}}" >
                 </div>
                 <div class="form-group">
+                    <label>Indirizzo Mail</label>
+                    <input class="form-control" name="email" placeholder="Indirizzo Mail" value="{{old('email')}}" >
+                </div>
+                <div class="form-group">
                     <label>Intro</label>
-                    <input class="form-control" name="intro"  value="{{old('name')}}"  placeholder="Intro..." >
+                    <textarea class="form-control" name="intro" rows="5" placeholder="Intro" required>{{old('intro')}}</textarea>
                 </div>
                 
             </div>
