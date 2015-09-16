@@ -596,3 +596,8 @@ span.load-more-section:after {
     float: none !important;
   }
 }
+
+.actity-expander {
+	color: #8DB335!important;
+	cursor: pointer!important;
+}

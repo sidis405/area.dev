@@ -11,6 +11,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a href="#top"><h1 class="logo">Area</h1></a>
+			<a href="#top"><h1 class="logo-mobile">Area</h1></a>
                     </div>
                 
                     <!-- Collect the nav links, forms, and other content for toggling -->
