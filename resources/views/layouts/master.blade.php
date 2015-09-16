@@ -43,9 +43,8 @@
     </div> <!-- end of main container -->
 
     
-    @include('layouts.footer')
 
-  
+ @include('layouts.footer')  
   
     <script src="/scripts/vendor.js"></script>
 
