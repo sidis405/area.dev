@@ -11,6 +11,9 @@
 
     <title>AREEA Admin</title>
 
+    <!-- Favicons -->     
+    @include('layouts.favicons')
+
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 
