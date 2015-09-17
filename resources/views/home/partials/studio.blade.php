@@ -14,7 +14,9 @@
                         <a class="read-more">Leggi di più</a>
 
                         <p class="team-member-long">
-                            {!! $member->description !!}
+
+                                {!! str_replace(['<p>', '</p>'], '', $member->description) !!}
+
                         </p>
                     </div>
                 </div> <!-- end of team member -->

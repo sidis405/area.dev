@@ -16,6 +16,7 @@ Route::get('image/{path}', function (League\Glide\Server $server, Illuminate\Htt
 
 
 Route::get('/', 'HomeController@index');
+Route::get('/home', 'HomeController@index');
 Route::get('loadMoreActivities', 'HomeController@loadMoreActivities');
 
 Route::group(array('prefix' => 'admin', 'middleware' => 'auth'), function () {

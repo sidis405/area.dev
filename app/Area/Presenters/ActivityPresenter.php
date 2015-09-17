@@ -13,6 +13,8 @@ class ActivityPresenter extends Presenter
 
     public function featuredImageUrl()
     {
-        return "/image/" . $this->featuredImage->id ."/". $this->featuredImage->file_name . "?w=343&h=278&fit=crop";
+        if ($this->featuredImage) {
+            return "/image/" . $this->featuredImage->id ."/". $this->featuredImage->file_name . "?w=343&h=278&fit=crop";
+        }
     }
 }
