@@ -16,5 +16,7 @@ class ActivityPresenter extends Presenter
         if ($this->featuredImage) {
             return "/image/" . $this->featuredImage->id ."/". $this->featuredImage->file_name . "?w=343&h=278&fit=crop";
         }
+
+        return "/img/activity-holder.jpg";
     }
 }

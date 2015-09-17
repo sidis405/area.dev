@@ -27,11 +27,13 @@
                                 @endif
 
                             <span class="status">{{ $activity->status->title }}</span>
-
+  
+                          @if(count($activity->media) > 0)
                             <div class="camera">
                                 <i class="fa fa-camera gallery-button" data-id="{{$activity->id}}"></i>
                                 <span class="counter">({{ count($activity->media) }})</span>
-                            </div>                            
+                            </div>    
+                          @endif                        
                           </div>
                       </div>
                   </div>
