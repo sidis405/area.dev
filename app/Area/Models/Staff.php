@@ -10,7 +10,7 @@ use Spatie\MediaLibrary\HasMedia\Interfaces\HasMedia;
 
 class Staff extends Model implements HasMedia
 {
-    protected $fillable = ['name', 'slug', 'intro', 'description', 'order'];
+    protected $fillable = ['name', 'slug', 'intro', 'description', 'order', 'email'];
 
     use PresentableTrait, HasMediaTrait, SortableTrait;
 
@@ -20,7 +20,8 @@ class Staff extends Model implements HasMedia
     }
 
     public static function make($name, $slug, $intro, $description, $email)
-    {
+    {   
+        
         $staff = new static(compact('name', 'slug', 'intro', 'description', 'email'));
 
         return $staff;
@@ -29,6 +30,8 @@ class Staff extends Model implements HasMedia
     public static function edit($staff_id, $name, $slug, $intro, $description, $featured_image_id, $email)
     {
         $staff = static::find($staff_id);
+
+
 
         $staff->name                = $name;
         $staff->slug                 = $slug;

@@ -35,9 +35,9 @@ class Activities extends Model implements HasMedia
     public static function edit($activity_id, $title, $slug, $subtitle, $description, $featured, $status_id, $featured_image_id)
     {
  
-        if ($featured == 'OFF') {
-            $featured_image_id = null;
-        }
+        // if ($featured == 'OFF') {
+        //     $featured_image_id = null;
+        // }
 
         $activity = static::find($activity_id);
 

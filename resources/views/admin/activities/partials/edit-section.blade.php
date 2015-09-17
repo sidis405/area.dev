@@ -41,7 +41,11 @@
                         <div id="selected_image_preview">
                             @if($activity->featured_image_id > 0)
                              <img src="/image/{{$activity->featuredImage->id}}/{{$activity->featuredImage->file_name}}?w=50&h=50&fit=crop">   
+                                
+                            @else 
+                                <a class="btn btn-xs btn-primary">Apri Galleria</a>
                             
+
                             @endif
                         </div>
                     </div>

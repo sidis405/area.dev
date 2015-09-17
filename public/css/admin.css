@@ -85,3 +85,16 @@ h1.logo {
 .admin-page-title {
 	font-weight: 100;
 }
+
+#selected_image_preview {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+#selected_image_preview a,
+#selected_image_preview img {
+    display: block;
+    margin: auto;
+    cursor: pointer;
+}
+

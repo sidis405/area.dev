@@ -21,7 +21,7 @@ class HomeController extends Controller
     {
         $featured = $activities_repo->getFeatured();
 
-        $activities = $activities_repo->getAll(5);
+        $activities = $activities_repo->getAll(10);
 
         $staff = $staff_repo->getAll();
 
@@ -30,7 +30,7 @@ class HomeController extends Controller
 
     public function loadMoreActivities(ActivitiesRepo $activities_repo)
     {
-        $activities = $activities_repo->getAll(5);
+        $activities = $activities_repo->getAll(10);
 
         return [
             'layout' => view('home.partials.activities-partial', compact('activities'))->render(), 

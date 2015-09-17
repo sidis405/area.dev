@@ -72,7 +72,8 @@ body {
   display: none;
 }
 section h2 {
-  text-align: center;
+  text-align: left;
+  padding-left: 5px;
   font-weight: 100;
   font-size: 50px;
   position: relative;
@@ -95,8 +96,8 @@ section h2:after {
   padding: 60px 0px;
 }
 .footer h2 {
-  margin: -90px auto 0 auto;
-  text-align: center;
+  margin: -90px auto 90px auto;
+  text-align: left;
   font-size: 50px;
   font-weight: 100;
 }
@@ -195,7 +196,7 @@ section#opening .about {
   font-weight: 100;
   margin: 60px auto;
   color: #000;
-  padding: 0 10%;
+  padding: 0 67px;
 }
 section#opening .about p {
   font-size: 16px;
@@ -232,6 +233,7 @@ section#opening #slideshow .carousel-caption h3 {
 section#opening #slideshow .item {
   width: 100%;
   height: 530px;
+  cursor: pointer;
   background: url(../img/slide01.jpg) no-repeat center center;
 }
 section#opening #slideshow .carousel-control {
@@ -265,7 +267,7 @@ section#opening #slideshow .carousel-control.right {
   background: transparent;
 }
 section#studio {
-  text-align: center;
+  text-align: left;
 }
 section#studio h3.team-member-name {
   font-weight: 100;
@@ -273,6 +275,7 @@ section#studio h3.team-member-name {
   display: inline-block;
   font-size: 28px;
   z-index: 5;
+  margin: 20px 0 20px 80px;
 }
 section#studio h3.team-member-name:before {
   position: absolute;
@@ -282,7 +285,7 @@ section#studio h3.team-member-name:before {
   -webkit-transform: translate(0, -50%);
       -ms-transform: translate(0, -50%);
           transform: translate(0, -50%);
-  font-weight: 700;
+  font-weight: 300;
   color: #58595b;
 }
 section#studio h3.team-member-name:after {
@@ -293,7 +296,7 @@ section#studio h3.team-member-name:after {
   -webkit-transform: translate(0, -50%);
       -ms-transform: translate(0, -50%);
           transform: translate(0, -50%);
-  font-weight: 700;
+  font-weight: 300;
   color: #8db335;
 }
 section#studio a.team-member-mail {
@@ -301,6 +304,7 @@ section#studio a.team-member-mail {
   color: #000;
   position: relative;
   z-index: 5;
+  margin: 20px 0 20px 80px;
 }
 section#studio .team-member-box {
   margin: -42px auto 40px auto;
@@ -356,6 +360,12 @@ section#attivita .attivita .status {
   margin: 30px auto;
   display: block;
 }
+
+section#attivita .attivita .camera{
+  cursor: pointer;
+  display: inline-block;
+}
+
 section#attivita .attivita .camera i {
   font-size: 26px;
   color: #8db335;

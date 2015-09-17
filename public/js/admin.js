@@ -102,7 +102,7 @@ function deleteImage(id) {
             _token: token
         },
         success: function(data) {
-
+            doMagnificPopup();
         },
         error: function(XMLHttpRequest, textstatus, error) {
 
@@ -110,10 +110,19 @@ function deleteImage(id) {
 
         }
     });
-
+    redoMagnificPopup();
     return false;
 
 }
+
+function redoMagnificPopup () {
+    $('.gallery-item').magnificPopup({
+      type: 'image',
+      gallery:{
+        enabled:true
+      }
+    });
+    }
 
 $('#press_deletion_form').submit(function() {
     var c = confirm("Sei sicuro di volere cancellare permanenetemente questa attività?");

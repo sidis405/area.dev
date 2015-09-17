@@ -31,6 +31,8 @@ class CreateStaffCommandHandler
      */
     public function handle(CreateStaffCommand $command)
     {
+
+
         $staff_object = Staff::make(
             $command->name,
             str_slug($command->name, '-'),

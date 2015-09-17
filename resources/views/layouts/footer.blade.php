@@ -6,19 +6,20 @@
                         <h2>Contatti</h2>
                     </div>
 
-                    <div class="col-sm-12">
+                   {{--  <div class="col-sm-12">
                         <img src="/img/footer-logo.png" alt="">
-                    </div>
-                    
-                    <div class="col-sm-4">
-                        <p class="address">{!! $texts['address']['value'] !!}</p>
-                    </div>
+                    </div> --}}
+                    <div class="col-sm-4">                        
+                        <p class="email"><a href="mailto:{!! strip_tags($texts['mail']['value']) !!}">{!! $texts['mail']['value'] !!}</a></p>
+                    </div>  
                     <div class="col-sm-4">
                         <p class="telephone">{!! $texts['tel']['value'] !!}</p>
                     </div>
-                    <div class="col-sm-4">                        
-                        <p class="email"><a href="mailto:{!! strip_tags($texts['mail']['value']) !!}">{!! $texts['mail']['value'] !!}</a></p>
-                    </div>                
+                    <div class="col-sm-4">
+                        <p class="address">{!! $texts['address']['value'] !!}</p>
+                    </div>
+                    
+                                  
                 </div>
             </div>
         </div>
