@@ -43,7 +43,7 @@
                              <img src="/image/{{$activity->featuredImage->id}}/{{$activity->featuredImage->file_name}}?w=50&h=50&fit=crop">   
                                 
                             @else 
-                                <a class="btn btn-xs btn-primary">Apri Galleria</a>
+                                <a class="btn btn-xs btn-primary">Scegli copertina</a>
                             
 
                             @endif
