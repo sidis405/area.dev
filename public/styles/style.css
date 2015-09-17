@@ -309,6 +309,7 @@ section#studio .team-member-box {
   display: table;
   position: relative;
   z-index: 2;
+  width:100%;
 }
 section#studio .team-member-box .team-member-short {
   vertical-align: middle;
@@ -530,6 +531,7 @@ span.load-more-section:after {
   section#studio .team-member-box {
     padding: 25px;
     margin-top: 0px;
+    width: 100%
   }
   section#attivita .attivita .col-md-4 {
     border: 0;
