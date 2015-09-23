@@ -1,2 +1,0 @@
-# area.dev
-Area Project
