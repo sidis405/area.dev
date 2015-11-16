@@ -32,11 +32,6 @@ Route::group(array('prefix' => 'admin', 'middleware' => 'auth'), function () {
         return redirect()->to('admin/attivita');
     });
 
-    // Route::get('/', [
-    //     'as'    => 'admin_home',
-    //     'uses'  => 'Admin\HomeController@index'
-    //     ]);
-
     #   ACTIVITIES ROUTES
 
     Route::get('attivita', [

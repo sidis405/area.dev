@@ -2,7 +2,7 @@
         <div class="row slogan">
             <div class="col-xs-12">
                 <h3>
-                    {!! $texts['slogan']['value'] !!}
+                    {!! str_replace(['<p>', '</p>'], '', $texts['slogan']['value'] ) !!}
                 </h3>
             </div>
         </div> <!-- end of slogan -->
@@ -17,11 +17,11 @@
             </div>
         </div>        
 
-        <div class="row about">
+     <!--    <div class="row about">
             <div class="col-xs-12">
                 <p>                    
                     {!! $texts['block_2']['value'] !!}
                 </p>
             </div>
-        </div>
+        </div> -->
     </section> <!-- end of opening -->

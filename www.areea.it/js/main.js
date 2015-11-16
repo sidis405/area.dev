@@ -11,7 +11,13 @@ $('.item').click(function() {
 	var url = $(this).data('url');
 	var navbar_height = parseInt($('.navbar').css('height').replace('px', ''));
 
-    animate_scroll(url, navbar_height, 25);
+    if($(url).length > 0)
+    {
+        animate_scroll(url, navbar_height, 25);
+    }else{
+        animate_scroll($('.load-more-activities'), navbar_height, 25);
+    }
+
 
 });
 
