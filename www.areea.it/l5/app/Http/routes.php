@@ -19,6 +19,7 @@ Route::get('image/{path}', function (League\Glide\Server $server, Illuminate\Htt
 
 
 Route::get('/', 'HomeController@index');
+Route::get('policy', 'HomeController@policy');
 Route::get('/home', 'HomeController@index');
 Route::get('loadMoreActivities', 'HomeController@loadMoreActivities');
 

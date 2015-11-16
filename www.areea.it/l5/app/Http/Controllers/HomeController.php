@@ -38,4 +38,9 @@ class HomeController extends Controller
             'more' => $activities->hasMorePages(), 
             'galleries' => view('home.partials.gallery-partial-main', compact('activities'))->render()];
     }
+
+    public function policy()
+    {
+        return view('layouts.policy');
+    }
 }

@@ -113,3 +113,16 @@ function getActivities (url) {
 
 }
 
+
+$(document).ready(function(){
+    console.log('cookie');
+  $.cookieBar({
+    message: "Areea utilizza cookies tecnici. Continuando la navigazione ne accetti l'utilizzo. ",
+    policyButton: true,
+    policyText: 'Maggiori informazioni',
+    policyURL: 'policy',
+    acceptText: 'Ok',
+    fixed: true,
+    bottom:true 
+  });
+});

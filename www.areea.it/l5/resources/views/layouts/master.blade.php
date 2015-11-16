@@ -12,6 +12,7 @@
     <link type="text/plain" rel="author" href="/humans.txt" />   
     
     <link rel="stylesheet" href="/styles/vendor.css">
+    <link rel="stylesheet" href="/css/jquery.cookiebar.css">
 
     <!-- Favicons -->     
     @include('layouts.favicons')
@@ -34,7 +35,7 @@
   <body id="top">
 
     
-    @include('layouts.header')
+    @yield('header')
 
     <div class="main container">
 
@@ -47,6 +48,7 @@
  
   
     <script src="/scripts/vendor.js"></script>
+    <script src="/js/jquery.cookiebar.js"></script>
 
     <script src="/scripts/main.js"></script>
 

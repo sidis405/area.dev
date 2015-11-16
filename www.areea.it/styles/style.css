@@ -2,6 +2,25 @@ body {
   font-family: 'Roboto';
   font-weight: 300;
 }
+#cookie-bar {
+  z-index: 9999;
+  background: #8db335;
+  color: #fff;
+}
+#cookie-bar .cb-enable {
+  background: transparent;
+  text-decoration: underline;
+}
+#cookie-bar .cb-enable:hover {
+  background: transparent;
+}
+#cookie-bar .cb-policy {
+  background: transparent;
+  text-decoration: underline;
+}
+#cookie-bar .cb-policy:hover {
+  background: transparent;
+}
 .shrink {
   padding: 10px !important;
 }

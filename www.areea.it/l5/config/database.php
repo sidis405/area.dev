@@ -52,29 +52,29 @@ return [
             'prefix'   => '',
         ],
 
-        'mysql' => [
-            'driver'    => 'mysql',
-            'host'      => env('DB_HOST', '62.149.150.198'),
-            'database'  => env('DB_DATABASE', 'Sql695339_2'),
-            'username'  => env('DB_USERNAME', 'Sql695339'),
-            'password'  => env('DB_PASSWORD', 'cg2y2e64mc'),
-            'charset'   => 'utf8',
-            'collation' => 'utf8_unicode_ci',
-            'prefix'    => '',
-            'strict'    => false,
-        ],
-        
         // 'mysql' => [
         //     'driver'    => 'mysql',
-        //     'host'      => env('DB_HOST', 'localhost'),
-        //     'database'  => env('DB_DATABASE', 'area'),
-        //     'username'  => env('DB_USERNAME', 'sid'),
-        //     'password'  => env('DB_PASSWORD', 'sapiens'),
+        //     'host'      => env('DB_HOST', '62.149.150.198'),
+        //     'database'  => env('DB_DATABASE', 'Sql695339_2'),
+        //     'username'  => env('DB_USERNAME', 'Sql695339'),
+        //     'password'  => env('DB_PASSWORD', 'cg2y2e64mc'),
         //     'charset'   => 'utf8',
         //     'collation' => 'utf8_unicode_ci',
         //     'prefix'    => '',
         //     'strict'    => false,
         // ],
+        
+        'mysql' => [
+            'driver'    => 'mysql',
+            'host'      => env('DB_HOST', 'localhost'),
+            'database'  => env('DB_DATABASE', 'area'),
+            'username'  => env('DB_USERNAME', 'root'),
+            'password'  => env('DB_PASSWORD', 'root'),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict'    => false,
+        ],
 
         'pgsql' => [
             'driver'   => 'pgsql',

@@ -2,6 +2,12 @@
 
 @section('title', 'Areea')
 
+@section('header')
+
+@include('layouts.header')
+
+@stop
+
 @section('header_scripts')
 <link rel="stylesheet" type="text/css" href="/css/magnific-popup.css">
 @stop
