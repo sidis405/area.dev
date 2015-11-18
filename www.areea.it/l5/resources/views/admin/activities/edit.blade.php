@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.css">
 <link rel="stylesheet" type="text/css" href="/css/image-picker.css">
 <link rel="stylesheet" type="text/css" href="/css/magnific-popup.css">
+<link rel="stylesheet" type="text/css" href="/css/summernote.css">
 
 @stop
 
@@ -31,6 +32,8 @@
 <script type="text/javascript" src="/js/dropzone-bindings.js"></script>
 <script type="text/javascript" src="/js/image-picker.min.js"></script>
 <script type="text/javascript" src="/js/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="/js/summernote.js"></script>
+<script type="text/javascript" src="/js/summernote-bindings.js"></script>
 
 <script type="text/javascript">
     

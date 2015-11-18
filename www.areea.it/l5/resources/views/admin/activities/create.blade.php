@@ -1,4 +1,11 @@
 @extends('admin.layouts.master')
+@section('header_scripts')
+
+<link rel="stylesheet" type="text/css" href="/css/summernote.css">
+
+@stop
+
+
 @section('content')
 
 @include('admin.layouts.title-and-toggle', array('title' => 'Inserisci Attività'))
@@ -33,7 +40,7 @@
             <div class="col-lg-12">
                 <div class="form-group">
                     <label>Descrizione</label>
-                    <textarea class="form-control" name="description" rows="5" placeholder="Descrivi attività"></textarea>
+                    <textarea class="form-control" id="activity_description"  name="description" rows="5" placeholder="Descrivi attività"></textarea>
                 </div>
             </div>
         </div>
@@ -49,4 +56,11 @@
         </form>
     </div>
 </div>
+@stop
+
+@section('footer_scripts')
+
+<script type="text/javascript" src="/js/summernote.js"></script>
+<script type="text/javascript" src="/js/summernote-bindings.js"></script>
+
 @stop

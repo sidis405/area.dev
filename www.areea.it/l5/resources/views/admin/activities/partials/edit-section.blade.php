@@ -57,7 +57,7 @@
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label>Descrizione</label>
-                        <textarea class="form-control" name="description" rows="5" placeholder="Descrivi attività">{{ old('description', $activity->description) }}</textarea>
+                        <textarea class="form-control" name="description" id="activity_description" rows="5" placeholder="Descrivi attività">{{ old('description', $activity->description) }}</textarea>
                     </div>
                 </div>
             </div>
