@@ -27,7 +27,7 @@
         <div class="copyright container">
             <div class="row">
                 <div class="col-sm-6">
-                    <p>Copyright@Area 2015</p>
+                    <p>Copyright@Area 2015 | <a href="policy">Privacy Policy</a></p>
                 </div>
                 <div class="col-sm-6">
                     <p class="pull-right">Web design by <a target="_blank" href="http://officine06.com">Officine06</a></p>
