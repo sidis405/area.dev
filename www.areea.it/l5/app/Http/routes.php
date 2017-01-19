@@ -18,9 +18,22 @@ Route::get('image/{path}', function (League\Glide\Server $server, Illuminate\Htt
 })->where('path', '.*');
 
 
-Route::get('/', 'HomeController@index');
+// Route::get('/', 'HomeController@index');
+// Route::get('/home', 'HomeController@index');
+
+Route::get('/', function(){
+    return view('home.index-new');
+});
+
+Route::get('home', function(){
+    return view('home.index-new');
+});
+
+
+Route::get('old', 'HomeController@index');
+
+
 Route::get('policy', 'HomeController@policy');
-Route::get('/home', 'HomeController@index');
 Route::get('loadMoreActivities', 'HomeController@loadMoreActivities');
 
 Route::group(array('prefix' => 'admin', 'middleware' => 'auth'), function () {

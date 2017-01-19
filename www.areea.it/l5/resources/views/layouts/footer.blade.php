@@ -10,13 +10,13 @@
                         <img src="/img/footer-logo.png" alt="">
                     </div> --}}
                     <div class="col-sm-4">                        
-                        <p class="email"><a href="mailto:{!! strip_tags($texts['mail']['value']) !!}">{!! $texts['mail']['value'] !!}</a></p>
+                        <p class="email"><a href="mailto:{!! strip_tags($texts['mail']['value']) !!}">{!! str_replace('p>', 'span>', $texts['mail']['value']) !!}</a></p>
                     </div>  
                     <div class="col-sm-4">
-                        <p class="telephone">{!! $texts['tel']['value'] !!}</p>
+                        <p class="telephone">{!! str_replace('p>', 'span>', $texts['tel']['value']) !!}</p>
                     </div>
                     <div class="col-sm-4">
-                        <p class="address">{!! $texts['address']['value'] !!}</p>
+                        <p class="address">{!! str_replace('p>', 'span>', $texts['address']['value']) !!}</p>
                     </div>
                     
                                   

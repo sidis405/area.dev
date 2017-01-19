@@ -16,10 +16,11 @@
                 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse navbar-ex1-collapse">            
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#studio">Studio</a></li>
-                            <li><a href="#attivita">Attività</a></li>
-                            <li><a href="#contatti">Contatti</a></li>                
+                        <ul class="nav navbar-nav navbar-right">                            
+                            <li><a href="#studio">Chi siamo</a></li>
+                            <li><a href="#attivita">Attività</a></li>                            
+                            <li><a href="#contatti">Contatti</a></li>
+                            <li><a href="http://www.acamprovides.com">Acam</a></li>                
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div>

@@ -1,7 +1,7 @@
 <section id="studio">
         <div class="row">
             <div class="col-xs-12">
-                <h2>Studio</h2>
+                <h2 style="margin-top: 10px;">Chi siamo</h2>
             </div>
             @foreach ($staff as $member) 
                 <div class="col-xs-12 team-member">
